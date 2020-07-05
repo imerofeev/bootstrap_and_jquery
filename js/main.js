@@ -85,7 +85,7 @@ function fullInTopics() {
   var value1_2 = [];
   value1_2.push($("#gap2_1").val());
   value1_2.push($("#gap2_2").val());
-  value1_2.push($("gap2_3").val());
+  value1_2.push($("#gap2_3").val());
 
   for (var i = 0; i < fullInSubject2.answer.length; i++) {
     for (var j = 0; j < value1_2.length; j++) {
@@ -121,6 +121,7 @@ function multipleChoiceTopics() {
     [
       ["A", "B", "D"],
       ["A", "B", "C"],
+      ["A", "B", "D"],
     ],
     2,
     10
@@ -142,6 +143,16 @@ function multipleChoiceTopics() {
   if (answer2.length == value2.length) {
     var diffB = _.difference(value2, answer2);
     if (_.isEmpty(diffB)) {
+      multipleChoiceSubject.scores += multipleChoiceSubject.scorePerSubject;
+    }
+  }
+
+  var multipleChoiceSubject2 = new MultipleChoiceSubject("check_ans_3");
+  var value3 = multipleChoiceSubject3.calculation();
+  var answer3 = multipleChoiceSubject.answer[3];
+  if (answer3.length == value3.length) {
+    var diffB = _.difference(value3, answer3);
+    if (_.isEmpty(diffC)) {
       multipleChoiceSubject.scores += multipleChoiceSubject.scorePerSubject;
     }
   }
